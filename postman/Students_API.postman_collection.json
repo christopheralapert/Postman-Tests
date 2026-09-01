@@ -72,6 +72,84 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Ülesanne 3 - POST loo Katrin Kask",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Õpilane loodi staatusega 201\", function () {",
+              "    pm.response.to.have.status(201);",
+              "});",
+              "",
+              "const created = pm.response.json();",
+              "pm.test(\"Loodud õpilase andmed vastavad requestile\", function () {",
+              "    pm.expect(created.name).to.eql(\"Katrin Kask\");",
+              "    pm.expect(created.age).to.eql(20);",
+              "    pm.expect(created.major).to.eql(\"Computer Science\");",
+              "    pm.expect(created.id).to.be.a(\"number\");",
+              "});",
+              "pm.collectionVariables.set(\"createdStudentId\", created.id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Katrin Kask\",\n  \"age\": 20,\n  \"major\": \"Computer Science\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["students"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ülesanne 3 - GET kontrolli loodud õpilast",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Kontroll-GET leiab loodud õpilase\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const student = pm.response.json();",
+              "    pm.expect(student.id).to.eql(Number(pm.collectionVariables.get(\"createdStudentId\")));",
+              "    pm.expect(student.name).to.eql(\"Katrin Kask\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/students/{{createdStudentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{createdStudentId}}"]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
