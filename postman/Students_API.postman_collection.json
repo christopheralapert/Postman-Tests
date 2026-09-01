@@ -38,6 +38,40 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Ülesanne 2 - GET üks õpilane",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Staatus on 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Vastus sisaldab ainult õpilast ID-ga 1\", function () {",
+              "    const student = pm.response.json();",
+              "    pm.expect(student).to.be.an(\"object\");",
+              "    pm.expect(student).to.not.be.an(\"array\");",
+              "    pm.expect(student.id).to.eql(1);",
+              "    pm.expect(student.name).to.eql(\"Alice\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/students/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "1"]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
