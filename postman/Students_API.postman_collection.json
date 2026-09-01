@@ -23,6 +23,11 @@
               "    pm.expect(data).to.be.an(\"array\");",
               "    pm.expect(data.length).to.be.above(0);",
               "    pm.expect(data[0]).to.include.all.keys(\"id\", \"name\", \"age\", \"major\");",
+              "});",
+              "",
+              "pm.test(\"Vastuses on vähemalt üks õpilane\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(0);",
               "});"
             ]
           }
