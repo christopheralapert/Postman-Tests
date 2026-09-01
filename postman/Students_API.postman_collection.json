@@ -150,6 +150,79 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Ülesanne 4 - PUT muuda loodud õpilast",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Õpilase muutmine õnnestus\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const student = pm.response.json();",
+              "    pm.expect(student.id).to.eql(Number(pm.collectionVariables.get(\"createdStudentId\")));",
+              "    pm.expect(student.age).to.eql(21);",
+              "    pm.expect(student.major).to.eql(\"Mathematics\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 21,\n  \"major\": \"Mathematics\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students/{{createdStudentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{createdStudentId}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ülesanne 4 - GET kontrolli muudatusi",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Kaks muudatust säilisid\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const student = pm.response.json();",
+              "    pm.expect(student.age).to.eql(21);",
+              "    pm.expect(student.major).to.eql(\"Mathematics\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/students/{{createdStudentId}}",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "{{createdStudentId}}"]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
