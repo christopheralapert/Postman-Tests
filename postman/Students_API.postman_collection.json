@@ -277,6 +277,47 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Ülesanne 6 - PUT olematu õpilane",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Olematu õpilase muutmine ebaõnnestub\", function () {",
+              "    pm.response.to.have.status(404);",
+              "    pm.expect(pm.response.json().error).to.eql(\"Student not found\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 30,\n  \"major\": \"Physics\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students/999",
+          "host": ["{{baseUrl}}"],
+          "path": ["students", "999"]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
