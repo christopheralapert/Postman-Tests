@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "27b29183-2610-4e65-83d4-83dcc16c2001",
     "name": "Students API",
-    "description": "Õpetaja Students API kontrollitud päringud.",
+    "description": "Õpetaja Students API kontrollitud päringud. Ülesanne 7 on BLOCKED: õpetaja API ei implementeeri POST /students/bulk endpointi; vaata reports/task7.md. Collection ei sisalda sellele valet PASS-testi.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
