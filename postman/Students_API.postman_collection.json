@@ -345,6 +345,47 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Ülesanne 9 - POST puuduv major",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Puudulikku õpilast ei looda\", function () {",
+              "    pm.response.to.have.status(400);",
+              "    pm.expect(pm.response.json().error).to.eql(\"Invalid data\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Puudulik Test\",\n  \"age\": 20\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/students",
+          "host": ["{{baseUrl}}"],
+          "path": ["students"]
+        }
+      },
+      "response": []
     }
   ],
   "variable": [
