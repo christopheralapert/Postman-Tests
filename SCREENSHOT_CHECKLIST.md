@@ -1,74 +1,66 @@
 # Postmani GUI screenshotide kontrollnimekiri
 
-Codex ei ole neid GUI screenshote teinud. Kasutaja peab Postmanis käsitsi
-tegema järgmised pildid.
+Need GUI screenshotid tegi kasutaja käsitsi. Piltide sisu kontrolliti enne
+repo `screenshots/` kausta kopeerimist; ühtegi pilti ei genereeritud.
 
 ## Ülesanne 1
 
-- GET `/students` request koos 200 response'iga.
-- Vastus või eraldi tekst, kust on näha õpilaste arv ja väljad `id`, `name`,
-  `age`, `major`.
+- [x] [GET `/students` ja 200 response](screenshots/task1_get_all.png), kus on
+  näha kolm õpilast ning väljad `id`, `name`, `age`, `major`.
 
 ## Ülesanne 2
 
-- GET `/students/1` request koos ühe õpilase response'iga.
+- [x] [GET `/students/1` ja ühe õpilase response](screenshots/task2_get_one.png).
 
 ## Ülesanne 3
 
-- POST `/students` request Body ja 201 response.
-- Loodud õpilase GET-kontrollpäring ja response.
+- [x] [POST `/students` ja 201 response](screenshots/task3_post.png).
+- [x] [Loodud õpilase GET-kontroll ja response](screenshots/task3_get_check.png).
 
 ## Ülesanne 4
 
-- PUT request Body ja response, kus on näha vähemalt kaks muudetud välja.
-- Sama õpilase GET-kontrollpäring ja säilinud muudatustega response.
+- [x] [PUT Body ja response kahe muudetud väljaga](screenshots/task4_put.png).
+- [x] [GET-kontroll säilinud muudatustega](screenshots/task4_get_check.png).
 
 ## Ülesanne 5
 
-- DELETE request ja edukas response.
-- Kustutamise GET-kontroll ning 404 response.
+- [x] [DELETE ja edukas response](screenshots/task5_delete.png).
+- [x] [Kustutamise GET-kontroll ja 404 response](screenshots/task5_get_404.png).
 
 ## Ülesanne 6
 
-- Vigane PUT `/students/999` request ja 404 response.
+- [x] [Vigane PUT `/students/999` ja 404 response](screenshots/task6_put_404.png).
 - Screenshot või tekst 3–5-lauselise analüüsiga failist `reports/task6.md`.
 
 ## Ülesanne 7 – BLOCKED
 
-- Tõend päringust `POST /students/bulk`, mille response on 404
-  `Cannot POST /students/bulk`.
+- [x] [POST `/students/bulk` ja 404 `Cannot POST /students/bulk`](screenshots/task7_blocked.png).
 - Tõend või tekst, et õpetaja `app.js` failis bulk-endpoint puudub.
 - Ülesannet ei tohi näidata PASS-ina.
 
 ## Ülesanne 8
 
-- DELETE `/students/999` request ja 404 response.
+- [x] [DELETE `/students/999` ja 404 response](screenshots/task8_delete_404.png).
 - Screenshot või tekst vastustega kolmele küsimusele failist
   `reports/task8.md`.
 
 ## Ülesanne 9
 
-- POST `/students` puudulik Body, kus `major` puudub.
-- 400 `Invalid data` response.
+- [x] [Puudulik POST Body ja 400 `Invalid data` response](screenshots/task9_validation.png).
 - Screenshot või tekst 2–3-lauselise analüüsiga failist `reports/task9.md`.
 
 ## Ülesanne 10
 
-- GET kõik õpilased requesti Tests tab koos testiga
-  `Vastuses on vähemalt üks õpilane`.
-- Sama testi PASS tulemus Postmani Test Results vaates.
+- [x] [Tests tab koos nõutud testikoodiga](screenshots/task10_test_code.png).
+- [x] [Test Results PASS tulemus](screenshots/task10_pass.png).
 
 ## Ülesanne 11
 
-- GET kõik õpilased Tests tab koos keskmise vanuse skriptiga.
-- Postman Console log, kus on näha `Keskmine vanus: 23`.
-- Testi `Keskmine vanus arvutatud` PASS tulemus.
+- [x] [Postman Console `Keskmine vanus: 23` ja PASS tulemus](screenshots/task11_console.png).
 
 ## Ülesanne 12
 
-- Collectioni ülevaade Postmanis, kus kõik võimalikud requestid on ühe
-  `Students API` collectioni all.
-- Collection Runneri tulemus, kus võimalikud testid on PASS ja Ülesanne 7 on
-  eraldi BLOCKED, mitte PASS.
+- [x] [Ühe `Students API` collectioni ülevaade](screenshots/task12_collection.png).
+- [x] [Collection Runner: 16 testi, 0 viga ja Ülesanne 7 eraldi 0/0](screenshots/task12_runner.png).
 - Collection JSON peab jääma reposse faili
   `postman/Students_API.postman_collection.json`.

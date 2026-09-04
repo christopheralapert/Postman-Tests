@@ -57,5 +57,23 @@ Lõpliku kontrollkäivituse väljund asub failis
 Ülesande 7 blokeeringu tõendid asuvad failis `reports/task7.md`. Õpetaja API-d
 ei ole muudetud ja bulk-requestile ei ole lisatud valet PASS-testi.
 
-Postmani GUI-s käsitsi tehtavad screenshotid on loetletud failis
-`SCREENSHOT_CHECKLIST.md`.
+## Kontrollitud Postmani screenshotid
+
+Kasutaja käsitsi tehtud Postmani screenshotid kontrolliti visuaalselt ja
+kopeeriti kausta `screenshots/`. Ülesande 7 pilt tõendab blokeeringut, mitte
+testi õnnestumist.
+
+- Ülesanne 1: [GET kõik õpilased](screenshots/task1_get_all.png)
+- Ülesanne 2: [GET üks õpilane](screenshots/task2_get_one.png)
+- Ülesanne 3: [POST](screenshots/task3_post.png) ja [GET-kontroll](screenshots/task3_get_check.png)
+- Ülesanne 4: [PUT](screenshots/task4_put.png) ja [GET-kontroll](screenshots/task4_get_check.png)
+- Ülesanne 5: [DELETE](screenshots/task5_delete.png) ja [GET 404](screenshots/task5_get_404.png)
+- Ülesanne 6: [PUT 404](screenshots/task6_put_404.png)
+- Ülesanne 7: [BLOCKED 404](screenshots/task7_blocked.png)
+- Ülesanne 8: [DELETE 404](screenshots/task8_delete_404.png)
+- Ülesanne 9: [valideerimine](screenshots/task9_validation.png)
+- Ülesanne 10: [testikood](screenshots/task10_test_code.png) ja [PASS](screenshots/task10_pass.png)
+- Ülesanne 11: [konsool](screenshots/task11_console.png)
+- Ülesanne 12: [collection](screenshots/task12_collection.png) ja [runner](screenshots/task12_runner.png)
+
+Üksikasjalik kontroll on failis `SCREENSHOT_CHECKLIST.md`.
