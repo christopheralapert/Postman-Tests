@@ -1,20 +1,14 @@
-# Postmani ülesanne 7 – bulk-lisamine
+# Postmani ülesanne 7 – olematu õpilase kustutamine
 
-Staatus: **BLOCKED**
+Päring: `DELETE http://localhost:3000/students/999`
 
-PDF nõuab endpointi `POST http://localhost:3000/students/bulk`, millele tuleb
-saata vähemalt kahe õpilase JSON-massiiv. Kloonitud õpetaja API `app.js`
-lähtekoodis seda endpointi ei ole.
+1. HTTP staatus oli `404 Not Found`.
+2. API ei tagastanud õpilast, vaid JSON-veateate
+   `{"error":"Student not found"}`.
+3. Veateade tähendab, et serveri andmetes ei olnud ID-ga 999 õpilast, keda
+   kustutada.
 
-Päris serverile saadeti korrektne kahe õpilase massiiv. Käsurea kontrolli
-tulemus oli:
+Collectioni test kontrollib nii 404 staatust kui täpset veateadet.
 
-```text
-STATUS 404
-CONTENT_TYPE text/html; charset=utf-8
-BODY Cannot POST /students/bulk
-```
-
-Õpetaja API-d ei muudetud ja bulk-endpointi omavoliliselt ei lisatud. Seetõttu
-ei saa Ülesannet 7 praeguse õpetaja API versiooniga nõuetekohaselt lõpetada ega
-PASS-iks märkida.
+Kasutaja peab Postmani GUI-s tegema DELETE `/students/999` requesti ja
+response'i screenshoti.

@@ -1,14 +1,9 @@
-# Postmani ülesanne 8 – olematu õpilase kustutamine
+# Postmani ülesanne 8 – valideerimine
 
-Päring: `DELETE http://localhost:3000/students/999`
+API nõuab uue õpilase loomisel välju `name`, `age` ja `major`; testpäringust
+jäeti `major` teadlikult välja. POST tagastas `400 Bad Request` ja veateate
+`{"error":"Invalid data"}` ning järgnev GET kinnitas, et õpilast nimega
+`Puudulik Test` ei loodud.
 
-1. HTTP staatus oli `404 Not Found`.
-2. API ei tagastanud õpilast, vaid JSON-veateate
-   `{"error":"Student not found"}`.
-3. Veateade tähendab, et serveri andmetes ei olnud ID-ga 999 õpilast, keda
-   kustutada.
-
-Collectioni test kontrollib nii 404 staatust kui täpset veateadet.
-
-Kasutaja peab Postmani GUI-s tegema DELETE `/students/999` requesti ja
-response'i screenshoti.
+Kasutaja peab Postmani GUI-s tegema puuduliku request Body ja response'i
+screenshoti ning lisama juurde ülaltoodud analüüsi.

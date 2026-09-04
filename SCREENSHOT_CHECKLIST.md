@@ -32,22 +32,21 @@ repo `screenshots/` kausta kopeerimist; ühtegi pilti ei genereeritud.
 - [x] [Vigane PUT `/students/999` ja 404 response](screenshots/task6_put_404.png).
 - Screenshot või tekst 3–5-lauselise analüüsiga failist `reports/task6.md`.
 
-## Ülesanne 7 – BLOCKED
+## Ülesanne 7
 
-- [x] [POST `/students/bulk` ja 404 `Cannot POST /students/bulk`](screenshots/task7_blocked.png).
-- Tõend või tekst, et õpetaja `app.js` failis bulk-endpoint puudub.
-- Ülesannet ei tohi näidata PASS-ina.
+- [x] [DELETE `/students/999` ja 404 response](screenshots/task7_delete_404.png).
+- Vastused kolmele küsimusele on failis `reports/task7.md`.
 
 ## Ülesanne 8
 
-- [x] [DELETE `/students/999` ja 404 response](screenshots/task8_delete_404.png).
-- Screenshot või tekst vastustega kolmele küsimusele failist
-  `reports/task8.md`.
+- [x] [Puudulik POST Body ja 400 `Invalid data` response](screenshots/task8_validation.png).
+- Screenshot või tekst 2–3-lauselise analüüsiga failist `reports/task8.md`.
 
-## Ülesanne 9
+## Lisatest – POST /students/bulk API piirang
 
-- [x] [Puudulik POST Body ja 400 `Invalid data` response](screenshots/task9_validation.png).
-- Screenshot või tekst 2–3-lauselise analüüsiga failist `reports/task9.md`.
+- [x] [POST `/students/bulk` ja 404 `Cannot POST /students/bulk`](screenshots/lisatest_bulk_404.png).
+- Lisatest ei ole lõpliku PDF-i Ülesanne 7 ega kohustuslik PASS-test.
+- API piirang on dokumenteeritud failis `reports/lisatest_bulk.md`.
 
 ## Ülesanne 10
 
@@ -60,7 +59,13 @@ repo `screenshots/` kausta kopeerimist; ühtegi pilti ei genereeritud.
 
 ## Ülesanne 12
 
-- [x] [Ühe `Students API` collectioni ülevaade](screenshots/task12_collection.png).
-- [x] [Collection Runner: 16 testi, 0 viga ja Ülesanne 7 eraldi 0/0](screenshots/task12_runner.png).
+- [ ] Tee Postmani GUI-s uus collectioni ülevaate screenshot pärast lõpliku
+  nummerduse importimist.
+- [ ] Tee uus Collection Runneri screenshot pärast lõpliku nummerdusega jooksu.
 - Collection JSON peab jääma reposse faili
   `postman/Students_API.postman_collection.json`.
+
+Vana nummerdusega pildid on säilitatud failides
+`screenshots/enne_loplikku_numeratsiooni_collection.png` ja
+`screenshots/enne_loplikku_numeratsiooni_runner.png`. Need ei ole lõpliku
+nummerduse tõendid.

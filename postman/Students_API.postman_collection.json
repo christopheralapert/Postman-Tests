@@ -2,7 +2,7 @@
   "info": {
     "_postman_id": "27b29183-2610-4e65-83d4-83dcc16c2001",
     "name": "Students API",
-    "description": "Õpetaja Students API kontrollitud päringud. Ülesanne 7 on BLOCKED: õpetaja API ei implementeeri POST /students/bulk endpointi; vaata reports/task7.md. Collection ei sisalda sellele valet PASS-testi.",
+    "description": "Õpetaja lõpliku PDF-i Students API päringud. Ülesanne 7 on DELETE /students/999 ja Ülesanne 8 on puudulike andmetega POST /students. POST /students/bulk ei ole lõpliku PDF-i kohustuslik ülesanne; selle API piirang on dokumenteeritud vabatahtliku lisatestina failis reports/lisatest_bulk.md.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -336,7 +336,7 @@
       "response": []
     },
     {
-      "name": "Ülesanne 8 - DELETE olematu õpilane",
+      "name": "Ülesanne 7 - DELETE olematu õpilane",
       "event": [
         {
           "listen": "test",
@@ -363,7 +363,7 @@
       "response": []
     },
     {
-      "name": "Ülesanne 9 - POST puuduv major",
+      "name": "Ülesanne 8 - POST puuduv major",
       "event": [
         {
           "listen": "test",
